@@ -1,0 +1,40 @@
+summaries:
+  Checked: values.filter(value == true).length
+  "% Collected": ((values.filter(value == true).length / values.filter(!value.isType("null")).length) * 100).round(2)
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.inFolder("Pokemon Legends Z-A/Colorful Screws")
+    groupBy:
+      property: file.tags
+      direction: ASC
+    order:
+      - file.name
+      - aliases
+      - Obtained
+      - file.tags
+      - Cost
+    sort:
+      - property: Obtained
+        direction: ASC
+      - property: file.tags
+        direction: ASC
+      - property: file.name
+        direction: ASC
+    summaries:
+      Obtained: "% Collected"
+    columnSize:
+      note.Obtained: 184
+      note.Cost: 69
+  - type: cards
+    name: View
+    filters:
+      and:
+        - file.hasTag("ColorfulScrews")
+    order:
+      - file.name
+      - Obtained
+    image: note.Map
+    imageFit: contain
