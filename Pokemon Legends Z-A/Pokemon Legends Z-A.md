@@ -1,10 +1,67 @@
-
+---
+tags:
+  - Game
+Owned: true
+Cover: "[[Pokemon_Legends_ZA_Cover.png]]"
+Systems:
+  - Switch
+ReleaseDate: 2025-10-16
+---
 # Summary
+
+## Pokedex
+
+## TMs
+
+
+```base
+summaries:
+  "% Complete": (((values.filter(value == true).length) / values.filter(!value.isType("null")).length) * 100).round(2)
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.hasTag("TM")
+    order:
+      - file.name
+      - Obtained
+      - Location
+    summaries:
+      Obtained: "% Complete"
+
+```
+
+## Clothing
 
 ## Colorful Screws
 
 ### Screws
 
+#### Rouge District
+
+```base
+views:
+  - type: cards
+    name: Table
+    filters:
+      and:
+        - file.hasTag("ColorfulScrews/RougeDistrict")
+    order:
+      - file.name
+      - Obtained
+    image: note.Map
+
+```
+#### Jaune District
+
+#### Vert District
+
+#### Bleu District
+
+#### Magenta District
+
+#### All Screws
 ```base
 summaries:
   "% Complete": (((values.filter(value == true).length) / values.filter(!value.isType("null")).length) * 100).round(2)
@@ -17,11 +74,11 @@ views:
     order:
       - file.name
       - Obtained
-    sort:
-      - property: file.name
-        direction: ASC
+      - Location
+    sort: []
     summaries:
       Obtained: "% Complete"
+
 ```
 
 ### Canari Plushs
@@ -64,3 +121,5 @@ views:
 
 ```
 
+
+## Quests
