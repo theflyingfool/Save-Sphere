@@ -1,0 +1,11 @@
+filters: file.folder == "Footwear"
+views:
+  - type: table
+    name: Table
+    order:
+      - file.name
+      - Style
+      - Name
+      - Obtained
+      - Location
+      - Cost

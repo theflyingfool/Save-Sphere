@@ -1,0 +1,79 @@
+summaries:
+  Sum: values.filter(value.isType("number")).reduce(value + acc, 0).round(2)
+views:
+  - type: table
+    name: Tops
+    filters:
+      and:
+        - file.inFolder("Pokemon Legends Z-A/Clothing/Tops")
+    groupBy:
+      property: Name
+      direction: ASC
+    order:
+      - file.name
+      - Name
+      - Style
+      - Obtained
+      - Location
+      - Cost
+    sort:
+      - property: Cost
+        direction: ASC
+      - property: Style
+        direction: ASC
+    summaries:
+      Cost: Sum
+    columnSize:
+      file.name: 212
+      note.Name: 154
+      note.Style: 125
+  - type: table
+    name: Bottoms
+    filters:
+      and:
+        - file.inFolder("Pokemon Legends Z-A/Clothing/Bottoms")
+    groupBy:
+      property: Name
+      direction: ASC
+    order:
+      - file.name
+      - Name
+      - Style
+      - Obtained
+      - Location
+      - Cost
+    sort:
+      - property: Cost
+        direction: ASC
+      - property: Style
+        direction: ASC
+    summaries:
+      Cost: Sum
+    columnSize:
+      file.name: 212
+      note.Name: 154
+      note.Style: 125
+  - type: table
+    name: Everything
+    filters:
+      and:
+        - file.hasTag("Clothing")
+    groupBy:
+      property: Name
+      direction: ASC
+    order:
+      - file.name
+      - Name
+      - Style
+      - Obtained
+      - Location
+      - Cost
+    sort:
+      - property: Style
+        direction: ASC
+    summaries:
+      Cost: Sum
+    columnSize:
+      file.name: 212
+      note.Name: 154
+      note.Style: 125
